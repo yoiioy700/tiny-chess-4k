@@ -47,7 +47,7 @@ def S(d,a,b,y,n):
  x=Q;e=x+32768>>16;m=x-(e<<16);h=e+32768>>16;e-=h<<16;v=0 if h<2 and not{1,-1}&set(B)else(m*min(h,24)+e*max(0,24-h))//6*s+10
  if q and v>=b:return v
  a=max(a,v)if q else a;v=v if q else-I;g=0
- for m in sorted(gen(q),key=lambda m:abs(B[m&127])-(abs(B[m>>7&127])+(m>>14))*16):
+ for m in sorted(gen(q),key=lambda m:abs(B[m&127])-(abs(B[m>>7&127])+(m>>14))*16+(not y and m==XR)*99999):
   u=not(m>>14 or B[m>>7]);make(m)
   if A(B.index(6*s),-s):U();continue
   g+=1;r=d>2 and u and g>3 and not c;w=-S(d-1-r,-a-1,-a,y+1,1)if g>1 and not q else a+1
