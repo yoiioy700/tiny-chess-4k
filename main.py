@@ -2,7 +2,7 @@ import base64,json,os,sys,zlib;from urllib.request import*
 T=zlib.decompress(base64.b85decode('c-l3R-EPz{5QX1@H>fIv3hnM@6WjA^kDX-GX17(V!WC3PLI}kBUou<hL~=4tW-{kH7Wo%FrwDD1ff+?63{1r|2Pj%=u}Ip+)7sMKm*eyO*9rfZ$wj>BQ%G^xAhSV=Sh86IP%EQVLbJR1-s<i+pPs%wELYvbT#uUGz3;cjOStG6BH%u1G0{4S6pv<^e4R>GR=b^NWtb0#>2~H|3C7iSgMQeDPAP$ysXszO&h&8?Ac;`lhjXeiqP8|sB5SiPM{Co1d_1*f@@~gG9yno!Fl>9uk_!t6GD%Sk=z@ep0ATa|q<LJIHSS4Z9q)pSWnB&n%w>~9E24DWLCyei*9{Q19QM1e-=>6N2+(6Yx2SRCM8x~yQ#IK1Qr<Y0oU<pSO1?V$%tRzSwQ^=)&tINS>)qqi?_WP&zQ6qZ^Hw)(BgC}5?h=w)*hOY9P4O()!K5U$)|`DKXU5b83XCCcZ}zS_Twg|vgy0wxu_BzQ`5Xk!!0l&Gi(mdDpM}*``d19>GLZ<~ZV@I>7bSwP$b5Jt5Y6fWP+ujo=sB3YosTEk^_m-<wGXkQA$2hh-m`adMYCm1qb=h!SE+4T59{psZ<on(s?%X@qhPJgk4fG15d*|7pqAptA#twN6chXVnvwk0rY6~HsmoH(irHNARqxIeO@9G~H^Cb'))
 R=range;V=[[0]*128 for _ in R(13)]
 for k in R(384):p=k>>6;s=(k&63)+(k&56);w=(0,1,1,2,4,0)[p]<<32;V[p+1][s]=d=w+(-43,20,27,55,192,-64)[p]+T[k]+((-40,6,10,64,170,-64)[p]+T[k+384]<<16);V[-p-1][s^112]=2*w-d
-E=15,17,-15,-17;F=1,-1,16,-16;D=0,(-15,-17),(14,18,31,33,-14,-18,-31,-33),E,F,E+F,E+F;I=32000;B=board=[0]*128;side=1;H=N=X=XR=0;Z=-1;C=set();K=[];Q=0;NODES=45000
+E=15,17,-15,-17;F=1,-1,16,-16;D=0,(-15,-17),(14,18,31,33,-14,-18,-31,-33),E,F,E+F,E+F;I=32000;B=board=[0]*128;side=1;H=N=X=XR=0;Z=-1;C=set();K=[];Q=0;NODES=25000
 def set_fen(f):
  global side,C,Z,H,Q;P=f.split();B[:]=[0]*128;s=112
  for c in P[0]:B[s]='kqrbnp.PNBRQK'.find(c)-6 if c>'@'else 0;s+=int(c)if'/'<c<'A'else-24 if c<'0'else 1
