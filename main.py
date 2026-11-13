@@ -53,7 +53,7 @@ def S(d,a,b,y,n):
   g+=1;r=d>2 and u and g>3 and not c;w=-S(d-1-r,-a-1,-a,y+1,1)if g>1 and not q else a+1
   if w>a:w=-S(d-1,-b,-a,y+1,1)
   U();v=max(v,w)
-  if w>a:a=w;XR=X if y else m
+  if w>a:a=w;XR=m if not y else XR
   if a>=b:break
  if not y:X=XR
  return v if g or q else y-30000 if c else 0
